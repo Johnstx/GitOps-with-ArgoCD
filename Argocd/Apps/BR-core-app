@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: weather-app
+  # You'll usually want to add your resources to the argocd namespace.
+  namespace: argocd
+spec:
+  # The project the application belongs to.
+  project: default
+  source:
+    repoURL: 'https://github.com/Johnstx/GitOps-with-ArgoCD.git'  
+    targetRevision: HEAD  
+    path: 'Argocd/Apps/BlueriseApp'
+  # Destination cluster and namespace to deploy the application
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: bluerise
+  # Sync policy
+  syncPolicy:
+    automated: 
+      prune: true 
+      selfHeal: true 

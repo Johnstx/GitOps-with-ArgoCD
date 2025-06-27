@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: bluerise
+  labels:
+    name: bluerise
+ 
+
+
