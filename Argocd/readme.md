@@ -14,6 +14,6 @@ brew install argocd
 
 export ARGOCD_SERVER=localhost:8080
 export
-argocd login $ARGOCD_SERVER -argocd repo add git@github.com:Johnstx/terraform-aws-pipeline.git --ssh-private-key-path /home/stax/.ssh/id_rsa
+argocd login $ARGOCD_SERVER -argocd repo add  git@github.com:Johnstx/GitOps-with-ArgoCD.git --ssh-private-key-path /home/stax/.ssh/id_rsa
 
 
