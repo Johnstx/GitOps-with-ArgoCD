@@ -1,0 +1,20 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bluerise-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bluerise
+  template:
+    metadata:
+      labels:
+        app: bluerise
+    spec:
+      containers:
+      - name: bluerise-app
+        image: johnstx/bluerise:v1.3
+        ports:
+        - containerPort: 3000

@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: bluerise-service
+  labels: 
+    app: bluerise
+spec:
+  type: NodePort
+  selector:
+    app: bluerise
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 3000
+      nodePort: 30081
