@@ -1,0 +1,45 @@
+
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: 
+  namespace: 
+  labels:
+    app: 
+spec:
+  selector:
+    matchLabels:
+      app:
+      release: 
+      self-monitor: "true"
+  namespaceSelector:
+    matchNames:
+  endpoints:
+  - port: 
+    tlsConfig: 
+    path: 
+  - port:
+    interval: 
+    path: "/metrics"
+
+ 
+
+***************
+
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: bluerise-servicemonitor
+  labels:
+    release: prometheus-stack  # must match Prometheus release label
+spec:
+  selector:
+    matchLabels:
+      app: bluerise
+  endpoints:
+    - port: metrics
+      path: /metrics
+      interval: 15s
+  namespaceSelector:
+    matchNames:
+      - bluerise-namespace
