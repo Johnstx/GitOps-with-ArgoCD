@@ -4,3 +4,15 @@ prometheus:
     serviceMonitorSelector: {}
     serviceMonitorNamespaceSelector: {}
 
+
+grafana:
+  dashboards:
+    Kubernetes Cluster:
+      gnetId: 16734
+      revision:   # optional, or just omit to use latest
+      datasource: Prometheus
+
+    Argo-cd:
+      gnetId: 14584
+      datasource: Prometheus
+
