@@ -1,3 +1,5 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
 metadata:
   name: kube-prometheus-stack
   namespace: argocd
@@ -9,8 +11,8 @@ spec:
     targetRevision: 75.5.0
     helm:
       valueFiles:
-      - $values/Argocd/Apps/Helm/Values/kube-prometheus-stack-values.yaml
-      # - $values/Argocd/Apps/Helm/Values/values-kube-prometheus-stack.yaml
+      # - $values/Argocd/Apps/Helm/Values/kube-prometheus-stack-values.yaml
+      - $values/Argocd/Apps/Values/values-kube-prometheus-stack.yaml
   - repoURL: 'git@github.com:Johnstx/GitOps-with-ArgoCD.git'
     targetRevision: main
     ref: values

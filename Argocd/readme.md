@@ -1,5 +1,7 @@
+ArgoCD
+
 kubectl create namespace argocd
-kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+kubectl apply -n argocd -f <https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml>
 
 k port-forward svc/argocd-server 8080:80 -n argocd
 
@@ -14,10 +16,12 @@ brew install argocd
 
 export ARGOCD_SERVER=localhost:8080
 export
-argocd login $ARGOCD_SERVER 
--argocd repo add  git@github.com:Johnstx/GitOps-with-ArgoCD.git --ssh-private-key-path /home/stax/.ssh/id_rsa
+argocd login $ARGOCD_SERVER
+-argocd repo add  <git@github.com>:Johnstx/GitOps-with-ArgoCD.git --ssh-private-key-path /home/stax/.ssh/id_rsa
 
-argocd app create guestbook --repo https://github.com/argoproj/argocd-example-apps.git --path guestbook --dest-server https://kubernetes.default.svc --dest-namespace default
+argocd app create guestbook --repo <https://github.com/argoproj/argocd-example-apps.git> --path guestbook --dest-server <https://kubernetes.default.svc> --dest-namespace default
 
 argocd app create -f /mnt/c/Users/USER/Documents/staxxwrkspace/APPS/testApp/kind-bluerise-app/Monitoring-Stack-for-a-NodeJs-application/GitOps-with-ArgoCD/Argocd/Apps/BR-core-app.yaml
 
+
+argocd app create -f /mnt/c/Users/USER/Documents/staxxwrkspace/APPS/testApp/kind-bluerise-app/Monitoring-Stack-for-a-NodeJs-application/GitOps-with-ArgoCD/Argocd/Apps/prometheus-stack.yaml
