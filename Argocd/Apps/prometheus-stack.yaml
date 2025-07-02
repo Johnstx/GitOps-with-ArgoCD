@@ -12,7 +12,7 @@ spec:
     helm:
       valueFiles:
       # - $values/Argocd/Apps/Helm/Values/kube-prometheus-stack-values.yaml
-      - $values/Argocd/Apps/Values/values-kube-prometheus-stack.yaml
+       - $values/Argocd/Helm/Values/values-kube-prometheus-stack.yaml
   - repoURL: 'git@github.com:Johnstx/GitOps-with-ArgoCD.git'
     targetRevision: main
     ref: values
