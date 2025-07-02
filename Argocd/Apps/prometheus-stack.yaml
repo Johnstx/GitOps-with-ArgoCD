@@ -11,7 +11,7 @@ spec:
       valueFiles:
       - $values/Argocd/Apps/Helm/Values/kube-prometheus-stack-values.yaml
       # - $values/Argocd/Apps/Helm/Values/values-kube-prometheus-stack.yaml
-  - repoURL: 'git@github.com:Johnstx/terraform-aws-pipeline.git'
+  - repoURL: 'git@github.com:Johnstx/GitOps-with-ArgoCD.git'
     targetRevision: main
     ref: values
   syncPolicy:
